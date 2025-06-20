@@ -1,5 +1,5 @@
-use majiang_hupai::lib::TingPai;
+use majiang_hupai::lib::*;
 fn main() {
-    let rlt = TingPai::random();
+    let rlt = TingPai::Ting1::random();
     println!("{:?}",rlt);
 }
