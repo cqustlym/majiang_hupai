@@ -1,3 +1,5 @@
+use majiang_hupai::lib::TingPai;
 fn main() {
-    println!("Hello, world!");
+    let rlt = TingPai::random();
+    println!("{:?}",rlt);
 }
