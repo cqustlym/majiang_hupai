@@ -1,40 +1,30 @@
-pub mod lib {
-    use rand::Rng;
+use rand::Rng;
 
-    #[derive(Debug)]
-    pub enum TingPai {
-        Ting1(Ting1),
-        Ting2,
-    }
+//单钓带边张—听两门（7张牌）
+pub fn dan_diao_dai_bian_zhang() -> [u8; 4] {
+    let vec: [[u8; 4]; 4] = [[1, 1, 1, 2], [1, 2, 2, 2], [8, 8, 8, 9], [8, 9, 9, 9]];
+    let len = vec.len();
+    let mut rng = rand::rng();
+    let rand_number = rng.random_range(1..=len);
+    let rlt = vec[rand_number];
+    rlt
+}
 
-    impl TingPai {
-        pub fn random() -> Self {
-            let mut rng = rand::rng();
-            let random_num: u8 = Rng::random_range(&mut rng, 1..3);
-            match random_num {
-                1 => Ting1(Ting1),
-                2 => TingPai::Ting2,
-                _ => panic!("Invalid random number"),
-            }
-        }
-    }
+//单钓带坎张—听两门（7张牌）
+pub fn dan_diao_dai_kan_zhang4() -> [u8; 4] {
+    let vec: [[u8; 4]; 7] = [
+        [1, 1, 1, 3], 
+        [2, 2, 2, 4], 
+        [3, 3, 3, 5], 
+        [4, 4, 4, 6],
+        [5,5,5,7],
+        [6,6,6,8],
+        [7,7,7,9],
+    ];
 
-    #[derive(Debug)]
-    pub enum Ting1 {
-        TingDanDiao,
-        TingKaZhang,
-        TingBianZhang,
-    }
-    impl Ting1 {
-        pub fn random() -> Self {
-            let mut rng = rand::rng();
-            let random_num: u8 = Rng::random_range(&mut rng, 1..4);
-            match random_num {
-                1 => Self::TingDanDiao,
-                2 => Self::TingKaZhang,
-                3 => Self::TingBianZhang,
-                _ => panic!("Invalid random number"),
-            }
-        }
-    }
+    let len = vec.len();
+    let mut rng = rand::rng();
+    let rand_number = rng.random_range(1..=len);
+    let rlt = vec[rand_number];
+    rlt
 }

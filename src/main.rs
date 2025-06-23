@@ -1,5 +1,7 @@
-use majiang_hupai::lib::*;
+use majiang_hupai::*;
 fn main() {
-    let rlt = TingPai::Ting1::random();
-    println!("{:?}",rlt);
+    // let rlt = dan_diao_dai_bian_zhang();
+    let rlt = dan_diao_dai_kan_zhang4();
+    
+    println!("{:?}", rlt);
 }
