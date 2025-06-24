@@ -53,9 +53,44 @@ pub fn dan_diao_dai_kan_zhang4() -> [u8; 4] {
     rlt
 }
 
+//单钓带坎张—听两门（7张牌）
+pub fn dan_diao_dai_kan_zhang7() -> [u8; 7] {
+    let vec: [[u8; 7]; 8] = [
+        [1, 1, 1, 2, 3, 4, 6],
+        [2, 2, 2, 3, 4, 5, 7],
+        [3, 3, 3, 4, 5, 6, 8],
+        [4, 4, 4, 5, 6, 7, 9],
+        [4, 6, 7, 8, 9, 9, 9],
+        [3, 5, 6, 7, 8, 8, 8],
+        [2, 4, 5, 6, 7, 7, 7],
+        [1, 3, 4, 5, 6, 6, 6],
+    ];
+
+    let len = vec.len();
+    let mut rng = rand::rng();
+    let rand_number = rng.random_range(1..len);
+    let rlt = vec[rand_number];
+    rlt
+}
+
 //三面听—听三门（11张牌）
 pub fn san_mian_ting() -> [u8; 5] {
     let vec: [[u8; 5]; 3] = [[2, 3, 4, 5, 6], [3, 4, 5, 6, 7], [4, 5, 6, 7, 8]];
+
+    let len = vec.len();
+    let mut rng = rand::rng();
+    let rand_number = rng.random_range(1..len);
+    let rlt = vec[rand_number];
+    rlt
+}
+
+//单钓双坎听—听三门（11张牌）
+pub fn dan_diao_shuang_kan_ting() -> [u8; 7] {
+    let vec: [[u8; 7]; 3] = [
+        [1, 1, 1, 3, 5, 5, 5],
+        [2, 2, 2, 4, 6, 6, 6],
+        [3, 3, 3, 5, 7, 7, 7],
+    ];
 
     let len = vec.len();
     let mut rng = rand::rng();
