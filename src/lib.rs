@@ -8,7 +8,7 @@ pub fn dan_diao_dai_bian_zhang() -> [u8; 4] {
         [2, 3, 3, 3],
         [2, 2, 2, 3],
         [3, 4, 4, 4],
-        [3, 3, 3, 3],
+        [3, 3, 3, 4],
         [4, 5, 5, 5],
         [4, 4, 4, 5],
         [5, 6, 6, 6],
@@ -86,10 +86,12 @@ pub fn san_mian_ting() -> [u8; 5] {
 
 //单钓双坎听—听三门（11张牌）
 pub fn dan_diao_shuang_kan_ting() -> [u8; 7] {
-    let vec: [[u8; 7]; 3] = [
+    let vec: [[u8; 7]; 5] = [
         [1, 1, 1, 3, 5, 5, 5],
         [2, 2, 2, 4, 6, 6, 6],
         [3, 3, 3, 5, 7, 7, 7],
+        [4, 4, 4, 6, 8, 8, 8],
+        [5, 5, 5, 7, 9, 9, 9],
     ];
 
     let len = vec.len();
@@ -97,4 +99,45 @@ pub fn dan_diao_shuang_kan_ting() -> [u8; 7] {
     let rand_number = rng.random_range(1..len);
     let rlt = vec[rand_number];
     rlt
+}
+
+//小三明治牌型！—胡本身的牌+前后的牌！（前后没有就省略）
+pub fn xiao_san_ming_zhi() -> [u8; 7] {
+    let vec: [[u8; 7]; 7] = [
+        [1, 1, 1, 2, 3, 3, 3],
+        [2, 2, 2, 3, 4, 4, 4],
+        [3, 3, 3, 4, 5, 5, 5],
+        [4, 4, 4, 5, 6, 6, 6],
+        [5, 5, 5, 6, 7, 7, 7],
+        [6, 6, 6, 7, 8, 8, 8],
+        [7, 7, 7, 8, 9, 9, 9],
+    ];
+
+    let len = vec.len();
+    let mut rng = rand::rng();
+    let rand_number = rng.random_range(1..len);
+    let rlt = vec[rand_number];
+    rlt
+}
+
+//大三明治牌型！—胡本身的牌+前后的牌！（前后没有就省略）
+pub fn da_san_ming_zhi() -> [u8; 10] {
+    let vec: [[u8; 10]; 4] = [
+        [1, 1, 1, 2, 3, 4, 5, 6, 6, 6],
+        [2, 2, 2, 3, 4, 5, 6, 7, 7, 7],
+        [3, 3, 3, 4, 5, 6, 7, 8, 8, 8],
+        [4, 4, 4, 5, 6, 7, 8, 9, 9, 9],
+    ];
+
+    let len = vec.len();
+    let mut rng = rand::rng();
+    let rand_number = rng.random_range(1..len);
+    let rlt = vec[rand_number];
+    rlt
+}
+
+//超大三明治！—胡所有牌！！！！九莲宝灯
+pub fn jiu_lian_bao_deng() -> [u8; 13] {
+    let vec = [1, 1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9];
+    vec
 }
