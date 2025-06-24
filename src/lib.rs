@@ -141,3 +141,21 @@ pub fn jiu_lian_bao_deng() -> [u8; 13] {
     let vec = [1, 1, 1, 2, 3, 4, 5, 6, 7, 8, 9, 9, 9];
     vec
 }
+
+//对碰三面听—听五门（12张牌）
+pub fn dui_peng_san_mian_ting() -> [u8; 10] {
+    let vec: [[u8; 10]; 6] = [
+        [1, 1, 1, 2, 2, 3, 3, 4, 5, 6],
+        [2, 2, 2, 3, 3, 4, 4, 5, 6, 7],
+        [3, 3, 3, 4, 4, 5, 5, 6, 7, 8],
+        [4, 5, 6, 7, 7, 8, 8, 9, 9, 9],
+        [3, 4, 5, 6, 6, 7, 7, 8, 8, 8],
+        [2, 3, 4, 5, 5, 6, 6, 7, 7, 7],
+    ];
+
+    let len = vec.len();
+    let mut rng = rand::rng();
+    let rand_number = rng.random_range(1..len);
+    let rlt = vec[rand_number];
+    rlt
+}
