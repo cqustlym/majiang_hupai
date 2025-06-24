@@ -22,7 +22,7 @@ pub fn dan_diao_dai_bian_zhang() -> [u8; 4] {
     ];
     let len = vec.len();
     let mut rng = rand::rng();
-    let rand_number = rng.random_range(1..=len);
+    let rand_number = rng.random_range(1..len);
     let rlt = vec[rand_number];
     rlt
 }
@@ -48,7 +48,18 @@ pub fn dan_diao_dai_kan_zhang4() -> [u8; 4] {
 
     let len = vec.len();
     let mut rng = rand::rng();
-    let rand_number = rng.random_range(1..=len);
+    let rand_number = rng.random_range(1..len);
+    let rlt = vec[rand_number];
+    rlt
+}
+
+//三面听—听三门（11张牌）
+pub fn san_mian_ting() -> [u8; 5] {
+    let vec: [[u8; 5]; 3] = [[2, 3, 4, 5, 6], [3, 4, 5, 6, 7], [4, 5, 6, 7, 8]];
+
+    let len = vec.len();
+    let mut rng = rand::rng();
+    let rand_number = rng.random_range(1..len);
     let rlt = vec[rand_number];
     rlt
 }
